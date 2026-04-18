@@ -1,0 +1,50 @@
+{
+  "name": "@console-one/wire",
+  "version": "0.1.0",
+  "description": "Dictionary-based structural codec with delta encoding, plus an adapter-driven bundler for serializing object graphs with stable keys and dependency edges. Zero dependencies.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/console-one/wire.git"
+  },
+  "bugs": {
+    "url": "https://github.com/console-one/wire/issues"
+  },
+  "homepage": "https://github.com/console-one/wire#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "smoke": "node dist/smoke.js",
+    "test": "npm run smoke",
+    "prepublishOnly": "npm run clean && npm run build && npm run smoke"
+  },
+  "keywords": [
+    "codec",
+    "serialization",
+    "compression",
+    "dictionary",
+    "delta-encoding",
+    "object-graph",
+    "bundler",
+    "content-addressable"
+  ],
+  "author": "Andrew Chalmers",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.19.39",
+    "typescript": "^5.9.3"
+  }
+}
