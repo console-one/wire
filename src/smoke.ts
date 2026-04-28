@@ -145,7 +145,7 @@ function caseCompiler() {
       type: 'lit',
       matches: (x: any): x is ExprLit => x && x.kind === 'lit',
       key: e => `lit:${e.v}`,
-      deps: () => [],
+      dependencies: () => [],
       isSimple: () => true,
       renderInline: e => String(e.v),
       renderHoisted: () => ({ body: '' })
@@ -155,7 +155,7 @@ function caseCompiler() {
       matches: (x: any): x is ExprAdd => x && x.kind === 'add',
       key: e => `add:${JSON.stringify(e)}`,
       classify: () => 'expr',
-      deps: e => [e.l, e.r],
+      dependencies: e => [e.l, e.r],
       isSimple: () => false,
       renderInline: (_e, _ref) => '',
       renderHoisted: (e, tryCompile) => ({
